@@ -1,7 +1,9 @@
 "use client";
 import { motion, Variants } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
-
+import { TrackInfo } from "./TrackInfo";
+import { PlayerState, Track } from "@/hooks/Types";
+import AlbumArt from "./AlbumArt";
 // DATA
  
 const musicTrack: Track[] = [
@@ -155,21 +157,34 @@ const handlePlayToggle = () => {
             trackHistoryRef.current
         }
         return next;
-    })
-  }
+    });
+  };
 
-    // Render
+/**
+   * Seek to a specific position
+   */
+const handleSeek = (value: number) => {
+    const audio = audioRef.current;
+    if (!audio || !duration) return;
+    const nextTime = Math.min((value / 100) * duration, duration);
+    audio.currentTime = nextTime;
+    setCurrentTime(nextTime);
+};
+
+
+    // RENDER
   return (
     <div className="w-full max-w-[500px]">
-      <motion.div className="relative rounded-[28px] border border-[var(--color-neutral-800)] p-[28px] overflow-hidden">
+      <motion.div
+        className="relative overflow-hidden rounded-[28px] border border-[var(--color-neutral-800)] p-[28px]"
         variants={containerVariants}
         animate={playerState}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
-      {/* Header: Album Art + Track Info */}
-      <div>
-        <AlbumArt state={playerState} />
-        <TrackInfo track={currentTrack} state={playerState} />
+        {/* Header: Album Art + Track Info */}
+        <div className="flex items-start gap-[20px]">
+          <AlbumArt state={playerState} />
+          <TrackInfo track={currentTrack} state={playerState} />
       </div>
     </div>
   )
