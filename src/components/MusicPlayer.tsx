@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { TrackInfo } from "./TrackInfo";
 import { PlayerState, Track } from "@/hooks/Types";
 import AlbumArt from "./AlbumArt";
+import ProgressBar from "./ProgressBar";
 // DATA
  
 const musicTrack: Track[] = [
@@ -186,6 +187,14 @@ const handleSeek = (value: number) => {
           <AlbumArt state={playerState} />
           <TrackInfo track={currentTrack} state={playerState} />
       </div>
+
+      {/* Progress Bar */}
+        <ProgressBar
+          currentTime={currentTime}
+          duration={duration}
+          state={playerState}
+          onSeek={handleSeek}
+        />
     </div>
   )
 }
