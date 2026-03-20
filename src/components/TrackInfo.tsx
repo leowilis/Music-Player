@@ -1,13 +1,14 @@
 "use client";
 
 import { PlayerState, Track } from "@/hooks/Types";
+import { Equalizer } from "./Equalizer";
 
-// TYPE
+
+
 type TrackInfoProps = {
-    track: Track;
-    state: PlayerState;
+  track: Track;
+  state: PlayerState;
 };
-
 
 export function TrackInfo({ track, state }: TrackInfoProps) {
   return (
