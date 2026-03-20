@@ -132,7 +132,6 @@ const handlePrevTrack = useCallback(() => {
 /**
    * Toggle play/pause with loading animation
    */
-
 const handlePlayToggle = () => {
     if (toggleTimeoutRef.current) {
         clearTimeout(toggleTimeoutRef.current);
@@ -145,6 +144,19 @@ const handlePlayToggle = () => {
         toggleTimeoutRef.current = null; // Reset ref after completion
     }, 500);
 };
+
+/**
+   * Toggle shuffle mode
+   */
+  const handleShuffleToggle = () => {
+    setIsShuffle((prev) => {
+        const next = !prev;
+        if (next) {
+            trackHistoryRef.current
+        }
+        return next;
+    })
+  }
 
     // Render
   return (
