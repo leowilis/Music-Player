@@ -3,10 +3,12 @@ import { motion, Variants } from 'motion/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { TrackInfo } from './TrackInfo';
 import { PlayerState, Track } from '@/components/types';
-import AlbumArt from './AlbumArt';
 import ProgressBar from './ProgressBar';
 import { Controls } from './Controls';
 import { VolumeSlider } from './VolumeSlider';
+import AlbumArt from './AlbumArt';
+
+
 // DATA
 
 const musicTrack: Track[] = [
