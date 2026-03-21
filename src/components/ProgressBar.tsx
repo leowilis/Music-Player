@@ -1,6 +1,6 @@
 'use client';
 
-import { PlayerState } from '@/components/Types';
+import { PlayerState } from '@/components/types';
 import { motion } from 'motion/react';
 import { useMemo } from 'react';
 

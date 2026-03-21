@@ -1,6 +1,6 @@
 'use client';
 
-import { PlayerState, Track } from '@/components/Types';
+import { PlayerState, Track } from '@/components/types';
 import { Equalizer } from './Equalizer';
 
 type TrackInfoProps = {

@@ -1,6 +1,6 @@
 'use client';
 
-import { PlayerState } from '@/components/Types';
+import { PlayerState } from '@/components/types';
 import { motion, Variants } from 'motion/react';
 
 // Equalizer bar variants with linear easing (more natural per mentor feedback)
