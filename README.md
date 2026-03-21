@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎵 Music Player
 
-## Getting Started
+A modern music player built with **Next.js**, **Motion (Framer Motion)**, and **Tailwind CSS** — featuring smooth animations, multiple player states, equalizer visualization, and an interactive UI.
 
-First, run the development server:
+🔗 **Live Demo**: https://music-player-lw.vercel.app/
+
+---
+
+## ✨ Features
+
+- **3 Player States** — Playing, Paused, and Loading with smooth transitions
+- **Animated Album Art** — Continuous rotation while playing, scale transitions per state
+- **Equalizer Bars** — 5 animated bars with staggered wave effect
+- **Progress Bar** — Seekable, color-coded by player state
+- **Volume Control** — Hover-to-highlight slider
+- **Shuffle & Repeat** — Full playlist navigation with shuffle history
+- **Rapid Click Protection** — Race condition safe play/pause toggle
+
+---
+
+## 🛠 Tech Stack
+
+| Technology | Version |
+|---|---|
+| Next.js | 16.1.6 |
+| React | 19.2.3 |
+| Motion (Framer Motion) | 11.11.17 |
+| Tailwind CSS | 4 |
+| TypeScript | 5 |
+| Lucide React | 0.469.0 |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/leowilis/Music-Player.git
+cd Music-Player
+```
+
+### 2. Install dependencies
+
+```bash
+npm install --legacy-peer-deps
+```
+
+### 3. Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+src/
+  app/
+    page.tsx          # Main page
+    globals.css       # Design system tokens & global styles
+    layout.tsx        # Root layout
+  components/
+    MusicPlayer.tsx   # Main orchestration component
+    AlbumArt.tsx      # Album art with rotation animation
+    TrackInfo.tsx     # Track title & artist info
+    Equalizer.tsx     # Animated equalizer bars
+    Controls.tsx      # Playback control buttons
+    ProgressBar.tsx   # Seekable progress bar
+    VolumeSlider.tsx  # Volume control slider
+    types.ts          # Shared TypeScript types
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎬 Animation Details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Element | Animation |
+|---|---|
+| Album Art | 360° rotation (20s/cycle) while playing, scale transitions |
+| Equalizer | Height 20%→100%, stagger delay 100ms per bar, linear easing |
+| Container | Box shadow color changes (purple glow when playing) |
+| Progress Bar | scaleX GPU-accelerated fill |
+| Play Button | Spring animation, hover scale 1.05, tap scale 0.95 |
+| Volume Slider | Color transition on hover (200ms) |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed on **Vercel** — auto-deploys on every push to `main`.
+
+```bash
+npm run build
+```
