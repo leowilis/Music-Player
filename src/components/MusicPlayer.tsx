@@ -2,7 +2,7 @@
 import { motion, Variants } from 'motion/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { TrackInfo } from './TrackInfo';
-import { PlayerState, Track } from '@/hooks/Types';
+import { PlayerState, Track } from '@/components/Types';
 import AlbumArt from './AlbumArt';
 import ProgressBar from './ProgressBar';
 import { Controls } from './Controls';

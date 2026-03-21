@@ -1,6 +1,6 @@
 'use client';
 
-import { PlayerState } from '@/hooks/Types';
+import { PlayerState } from '@/components/Types';
 import { motion } from 'motion/react';
 import { useMemo } from 'react';
 
